@@ -1,32 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>VIRUS ALERT!</title>
-    <style>
-        body {
-            background: red;
-            color: white;
-            font-family: Arial;
-            text-align: center;
-        }
-        .warning {
-            font-size: 50px;
-            animation: blink 0.5s infinite;
-        }
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-    </style>
-</head>
-<body>
-    <div class="warning">⚠️ VİRÜS BULUNDU! ⚠️</div>
-    <p>Cihazınız 10 saniye içinde kapanacak!</p>
-    <script>
-        // 10 saniye sonra sayfayı yenile
-        setTimeout(() => {
-            window.location.reload();
-        }, 10000);
-    </script>
-</body>
-</html>
+<button id="download" 
+  style="position:absolute; transition:0.2s">
+  Mal dokana tıklayın
+</button>
+
+<script>
+  const btn = document.getElementById('download');
+  btn.addEventListener('mouseover', () => {
+    btn.style.left = Math.random()*window.innerWidth + 'px';
+    btn.style.top = Math.random()*window.innerHeight + 'px';
+  });
+</script>

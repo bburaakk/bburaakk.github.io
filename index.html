@@ -1,12 +1,17 @@
-<button id="download" 
-  style="position:absolute; transition:0.2s">
-  Mal dokana tıklayın
-</button>
+<div class="dashboard">
+  <div class="metrics">
+    <div class="metric-card bg-gradient-1">
+      <h3>Toplam Tahmin</h3>
+      <div class="value" id="totalPredictions">0</div>
+    </div>
+    <div class="metric-card bg-gradient-2">
+      <h3>Doğruluk Oranı</h3>
+      <div class="value" id="accuracyRate">%92.3</div>
+    </div>
+  </div>
 
-<script>
-  const btn = document.getElementById('download');
-  btn.addEventListener('mouseover', () => {
-    btn.style.left = Math.random()*window.innerWidth + 'px';
-    btn.style.top = Math.random()*window.innerHeight + 'px';
-  });
-</script>
+  <div class="main-chart">
+    <div id="confusionMatrix"></div>
+    <div id="featureImportance"></div>
+  </div>
+</div>

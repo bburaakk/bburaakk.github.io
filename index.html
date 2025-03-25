@@ -1,17 +1,36 @@
-<div class="dashboard">
-  <div class="metrics">
-    <div class="metric-card bg-gradient-1">
-      <h3>Toplam Tahmin</h3>
-      <div class="value" id="totalPredictions">0</div>
-    </div>
-    <div class="metric-card bg-gradient-2">
-      <h3>Doğruluk Oranı</h3>
-      <div class="value" id="accuracyRate">%92.3</div>
-    </div>
-  </div>
+{% load static %}
 
-  <div class="main-chart">
-    <div id="confusionMatrix"></div>
-    <div id="featureImportance"></div>
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Veri Tahmin Projesi</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animations.css' %}">
+</head>
+<body>
+    
+    <div class="dashboard">
+        <div class="metric-card">
+            <h3>Gerçek Zamanlı Tahmin</h3>
+            <div id="livePrediction"></div>
+        </div>
+        
+        
+        <form class="neomorphic-form" id="predictionForm">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Yaş</label>
+                <input type="number" id="age" required>
+            </div>
+            <button type="submit" class="holographic-btn">Tahmin Yap</button>
+        </form>
+
+        
+        <div id="featureChart"></div>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/charts.js' %}"></script>
+</body>
+</html>
